@@ -13,7 +13,7 @@ const { dateFormat: format } = themeConfig.global
 const isPost = isPostPage(Astro.url.pathname)
 const timeSpacingClass = isPost ? 'ml-1.75' : 'ml-1.5'
 
-function formatDate(date: Date, format: 'YYYY-MM-DD' | 'MM-DD-YYYY' | 'DD-MM-YYYY' | 'MONTH DAY YYYY' | 'DAY MONTH YYYY') {
+function formatDate(date: Date, format: 'YYYY-MM-DD' | 'MM-DD-YYYY' | 'DD-MM-YYYY' | 'MONTH DAY YYYY' | 'DAY MONTH YYYY' | 'YYYY년 MM월 DD일'): string {
   if (format === 'YYYY-MM-DD') {
     return date.toISOString().split('T')[0]
   }
@@ -48,6 +48,13 @@ function formatDate(date: Date, format: 'YYYY-MM-DD' | 'MM-DD-YYYY' | 'DD-MM-YYY
         month: 'short',
         day: 'numeric',
       }).replace(',', '')
+      
+    case 'YYYY년 MM월 DD일': {
+      const yyyy = date.getFullYear()
+      const mm = String(date.getMonth() + 1).padStart(2, '0')
+      const dd = String(date.getDate()).padStart(2, '0')
+      return `${yyyy}년 ${mm}월 ${dd}일`
+    }
 
     // Default to ISO format
     default:
@@ -61,17 +68,12 @@ function formatDate(date: Date, format: 'YYYY-MM-DD' | 'MM-DD-YYYY' | 'DD-MM-YYY
   {formatDate(date, format)}
 </time>
 
-<!-- updated date -->
-{updatedDate && (
-  <time
-    datetime={updatedDate.toISOString().split('T')[0]}
-    class={timeSpacingClass}
-  >
-    updated {formatDate(updatedDate, format)}
-  </time>
-)}
+<!--
+separator
+<span aria-hidden="true" class="mx-1 text-secondary">·</span>
 
-<!-- reading time -->
+reading time
 <span class={timeSpacingClass}>
   {minutes} min
 </span>
+-->

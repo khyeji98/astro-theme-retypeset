@@ -7,11 +7,11 @@ type ExcerptScene = 'list' | 'meta' | 'og' | 'feed'
 const markdownParser = new MarkdownIt()
 const excerptLengths: Record<ExcerptScene, { cjk: number, other: number }> = {
   list: {
-    cjk: 120,
+    cjk: 180,
     other: 240,
   },
   meta: {
-    cjk: 120,
+    cjk: 160,
     other: 240,
   },
   og: {
@@ -19,7 +19,7 @@ const excerptLengths: Record<ExcerptScene, { cjk: number, other: number }> = {
     other: 140,
   },
   feed: {
-    cjk: 70,
+    cjk: 100,
     other: 140,
   },
 }

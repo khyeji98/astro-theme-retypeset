@@ -34,8 +34,8 @@ export interface Props {
         {/* post title */}
         <h3 class="inline transition-colors hover:c-primary">
           <a
-            class="cjk:tracking-0.02em"
-            lg={isHome ? 'font-medium text-4.5' : ''}
+            class="cjk:tracking-0.02em font-semibold"
+            lg={isHome ? 'font-semibold text-4.5' : 'font-semibold'}
             href={getPostPath(slug, lang)}
             transition:name={`post-${slug}${lang ? `-${lang}` : ''}`}
             data-disable-theme-transition

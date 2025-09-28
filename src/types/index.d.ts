@@ -32,7 +32,7 @@ export interface ThemeConfig {
     locale: typeof supportedLangs[number]
     moreLocales: typeof supportedLangs[number][]
     fontStyle: 'sans' | 'serif'
-    dateFormat: 'YYYY-MM-DD' | 'MM-DD-YYYY' | 'DD-MM-YYYY' | 'MONTH DAY YYYY' | 'DAY MONTH YYYY'
+    dateFormat: 'YYYY-MM-DD' | 'MM-DD-YYYY' | 'DD-MM-YYYY' | 'MONTH DAY YYYY' | 'DAY MONTH YYYY' | 'YYYY년 MM월 DD일'
     toc: boolean
     katex: boolean
     reduceMotion: boolean
