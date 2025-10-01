@@ -23,17 +23,20 @@ export interface Props {
 
 /** 본문에서 첫 이미지 URL 추출 (마크다운 & img 태그 모두 지원) */
 function extractFirstImage(markdown: string | undefined): string | null {
-  if (!markdown) return null;
+  if (!markdown)
+return null
 
   // 1) ![alt](url "title") 형태
-  const md = markdown.match(/!\[[^\]]*\]\((?<url>[^)\s]+)(?:\s+"[^"]*")?\)/);
-  if (md?.groups?.url) return md.groups.url;
+  const md = markdown.match(/!\[[^\]]*\]\((?<url>[^)\s]+)(?:\s+"[^"]*")?\)/)
+  if (md?.groups?.url)
+return md.groups.url
 
   // 2) <img src="..."> 형태
-  const html = markdown.match(/<img[^>]+src=["']([^"']+)["'][^>]*>/i);
-  if (html?.[1]) return html[1];
+  const html = markdown.match(/<img[^>]+src=["']([^"']+)["'][^>]*>/i)
+  if (html?.[1])
+return html[1]
 
-  return null;
+  return null
 }
 
 ---
@@ -58,7 +61,7 @@ function extractFirstImage(markdown: string | undefined): string | null {
           {/* post title */}
           <h3 class="inline transition-colors hover:c-primary">
             <a
-              class="cjk:tracking-0.02em font-semibold"
+              class="font-semibold cjk:tracking-0.02em"
               lg={isHome ? 'font-semibold text-4.5' : 'font-semibold'}
               href={href}
               transition:name={`post-${slug}${lang ? `-${lang}` : ''}`}
@@ -74,6 +77,13 @@ function extractFirstImage(markdown: string | undefined): string | null {
               />
             )}
           </h3>
+
+          {/* desktop post description */}
+          {isHome && (
+            <div class="heti mt-2 hidden lg:block">
+              <p>{getPostDescription(post, 'list')}</p>
+            </div>
+          )}
 
           {/* mobile post time */}
           <div
@@ -94,13 +104,6 @@ function extractFirstImage(markdown: string | undefined): string | null {
               minutes={post.remarkPluginFrontmatter?.minutes}
             />
           </div>
-
-          {/* desktop post description */}
-          {isHome && (
-            <div class="heti mt-2 hidden lg:block">
-              <p>{getPostDescription(post, 'list')}</p>
-            </div>
-          )}
         </div>
 
         {/* 오른쪽: 썸네일 (optional) */}
@@ -111,8 +114,8 @@ function extractFirstImage(markdown: string | undefined): string | null {
               alt={post.data.title}
               loading="lazy"
               decoding="async"
-              class="h-24 w-32 object-cover transition-transform duration-300 hover:scale-102 lg:(h-32 w-48)"
-              onerror="this.src='/images/posts/placeholder.png'; this.onerror=null;"
+              class="h-24 w-32 object-cover transition-transform duration-300 lg:(h-32 w-48) hover:scale-102"
+              onerror="this.src='https://placehold.co/600x400?text=No+Image'; this.onerror=null;"
             />
           </a>
         )}
