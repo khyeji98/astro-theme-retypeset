@@ -23,18 +23,15 @@ export interface Props {
 
 /** 본문에서 첫 이미지 URL 추출 (마크다운 & img 태그 모두 지원) */
 function extractFirstImage(markdown: string | undefined): string | null {
-  if (!markdown)
-return null
+  if (!markdown) return null
 
   // 1) ![alt](url "title") 형태
   const md = markdown.match(/!\[[^\]]*\]\((?<url>[^)\s]+)(?:\s+"[^"]*")?\)/)
-  if (md?.groups?.url)
-return md.groups.url
+  if (md?.groups?.url) return md.groups.url
 
   // 2) <img src="..."> 형태
   const html = markdown.match(/<img[^>]+src=["']([^"']+)["'][^>]*>/i)
-  if (html?.[1])
-return html[1]
+  if (html?.[1]) return html[1]
 
   return null
 }
