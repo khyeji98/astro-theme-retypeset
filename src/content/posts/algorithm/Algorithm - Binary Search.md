@@ -1,12 +1,11 @@
 ---
-title: Leetcode 39. Search Insert Position
+title: 이진 탐색(Binary Search)
 published: 2025-10-04
 tags:
   - Algorithm
-  - Leetcode
 toc: false
 lang: ko
-abbrlink : leetcode-39
+abbrlink : binary-search
 ---
 
 # 이진 탐색(Binary Search)
