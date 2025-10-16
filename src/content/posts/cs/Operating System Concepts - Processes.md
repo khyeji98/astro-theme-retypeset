@@ -135,7 +135,7 @@ abbrlink : operating-system-concepts-processes
   - 이때 CPU 제어권은 스케줄러의 결정에 의해 할당되는데, 두 프로세스 중 어떤 프로세스가 먼저 할당 받을지는 알 수 없음
   - 스케줄러 결정 기준은 우선순위, 시스템 정책 등에 따라 다름
 
-![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbaSqvw%2FbtsQNcBjWMo%2FAAAAAAAAAAAAAAAAAAAAAMU5-RUOB_zEuVV6qx80igo7IyG0FpMxtYmAS-Epdlan%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1759244399%26allow_ip%3D%26allow_referer%3D%26signature%3DWjp0NOlJkGCTv8CC7rQKn0Ic8CI%253D)
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbaSqvw%2FbtsQNcBjWMo%2FAAAAAAAAAAAAAAAAAAAAAMU5-RUOB_zEuVV6qx80igo7IyG0FpMxtYmAS-Epdlan%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1761922799%26allow_ip%3D%26allow_referer%3D%26signature%3D6rRNmRwgDwZ4hg%252BXMg5u5tWxqi8%253D)
 
 :::note[fork() 시스템 콜이 왜 fork라는 네이밍을 갖게 되었는지 아십니까?]
 fork()를 하면 parent process에서 child process로 분기가 되는데, 대충 예시로 3개의 child process로 분기되면 마치 포크(fork) 같죠. 그래서 fork라고 합니다.
