@@ -9,19 +9,57 @@ lang: ko
 abbrlink : concurrency
 ---
 
-> 🚧 작성중입니다
+:::fold[Intro]
+### 동시성(Concurrency)의 본질
+
+- 여러 작업이 동시에 수행될 수 있는 구조나 특성
+
+동시성이 나오면 "비동기, 동기, 병렬" 이런 키워드들이 나와 헷갈렸는데, 딱 대놓고 보자면 동시성은 **논리적 동시성**입니다.
+
+여러 작업이 동시에 수행되는데에는 물리적으로 동시에 수행하는 방법(병렬)도 있고 작업 간에 왔다갔다 하면서 CPU 자원을 효율적으로 사용해서 마치 여러 작업이 동시에 수행되는 것처럼 보이도록 하는 방법(비동기)도 있는데 어떤 방법을 사용하든 여러 작업이 동시에 수행되는 것처럼 보이면 **동시성**이라는 거죠.
+
+그래서 동시성에 대해 설명할 때 자꾸 비동기, 동기, 벙렬성 키워드가 언급되는 것입니다.
+
+##### 그렇다면 Swift Concurrency는?
+
+Swift Concurrency는 동시성을 구현하는 방식 중, 비동기 모델을 기반으로 한 대신 구조적이면서 안전하게 표현한 언어 차원의 시스템입니다.
+
+🍎 **언어 레벨에서 제공하는 안전하고 구조적인 비동기식 동시성 시스템** 인거죠.
+
+기존에 비동기 작업은 개발자들에게 꽤 골칫거리였기 때문에 고맙죠. 스레드 직접 관리하랴, 공유 자원 접근 제어하랴, 코드 복잡해지고...
+:::
 
 # Swift Concurrency
 
-- 여러 작업이 동시에 수행할 수 있는 코드 구조
-- Swift Concurrency를 통해 안전하고 읽기 쉬운 비동기 작업을 구성할 수 있게 됨
-  - Swift Concurrency 이전 비동기 처리 방식 : completion handler, GCD
-  - Swift Concurrency 에서 비동기 처리 방식 : async/await, Task, Actor 등
-  - 특히 Swift Concurrency에서 비동기 함수는 다른 함수의 실행을 일시 중단했다가 완료하면 다시 재개하는데, 이 과정을 개발자가 직접 스레드를 제어하지 않아도 **구조적**으로 처리해줌 (= Structured Concurrency)
+- 여러 작업이 동시에 수행되는 것처럼 설계된 비동기식 동시성 시스템
+- 비동기 작업을 안전하게 구현할 수 있고, 읽기 쉽게 설계됨
+  - 옛날 비동기 처리 방식 : completion handler, GCD
+  - Swift Concurrency 비동기 처리 방식 : async/await, Task, Actor 등
+- 특히 비동기 함수로 인해 호출부의 작업 실행이 일시 중단되면 스레드가 비동기 함수를 처리하는 작업 실행으로 넘어가고 완료되면 다시 재개하기 위해 넘어오는 과정을 개발자가 직접 제어하지 않아도, **구조적**으로 처리해주는 것이 특징 (= **Structured Concurrency**)
+  - 구조적으로 처리한다 = Swift Concurrency의 비동기 코드 자체가 비동기 실행 구조를 나타낸다
+
+```swift
+// 옛날 비동기 처리 : 중첩 클로저, 에러 throw 불편, 함수가 종료돼도 async 코드블럭은 계속 실행될 수 있음
+func loadData() {
+    DispatchQueue.global().async {
+        let data = fetchRemoteData()
+        DispatchQueue.main.async {
+            self.updateUI(with: data)
+        }
+    }
+}
+
+// Swift Concurrency : 코드 구조가 실행 구조와 같음(읽기 편함), try로 에러 throw, 부모-자식 태스크 구조(부모가 취소되면 자식도 취소됨)
+func loadData() async throws -> Data {
+    async let user = fetchUser()      // 자식 Task
+    async let posts = fetchPosts()    // 자식 Task
+    return try await process(user, posts)
+}
+```
 
 ## Async / Await
 
-- 비동기 함수 호출시, `await` 키워드를 명시함으로써 "해당 함수의 결과가 반환될 때까지 일시 중단(suspension point)합니다"라는 것을 표현함
+- 비동기 함수 호출시, `await` 키워드를 명시함으로써 해당 함수의 결과가 반환될 때까지 **일시 중단**(suspension point)하는 것을 표현함
   - 프로그램 전체가 멈추는 것이 아니며, 다른 비동기 작업이 동시에 실행될 수 있음
 - `async let` 구문을 통해 여러 비동기 함수를 **병렬로 실행**할 수도 있음
   - 실제로 여러 태스크를 동시에 스케줄링하며, 결과는 `await` 시점에 한번에 병합되어 값에 접근할 수 있음
