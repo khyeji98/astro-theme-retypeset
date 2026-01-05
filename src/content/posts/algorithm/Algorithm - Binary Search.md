@@ -20,7 +20,7 @@ abbrlink : binary-search
 이때 들었던 생각은 "둘로 나눌 기준(divider)이 필요하겠구나!"  
 그렇게 이진 탐색 첫 문제를 무모하게 풀기 시작했습니다  
 
-![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbolKB1%2FbtsQ1ZpP9qF%2FAAAAAAAAAAAAAAAAAAAAAMTiUiXqjQfJdWwIf1hhwtJacXP4QdpEGRnEyGE43UJ6%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1761922799%26allow_ip%3D%26allow_referer%3D%26signature%3DhSyFL10nHb5ofqY%252FJbrq1oiaA6E%253D)  
+![](../_images/binary-search.png)
   
 이런 경우, 저런 경우 따져가며 코드를 짜다보니 if의 if… elseif… 가 생겨나고 결국 TLE가 발생해버렸습니다..  
 결국 약간의 힌트를 얻고, 깨달았습니다 “범위를 줄여나가는 것보다 나누는 기준선에 초점을 두었구나”
