@@ -1,5 +1,5 @@
 ---
-title: Operating System Concepts - Introduction
+title: Operating System Concepts - 1. Introduction
 published: 2025-09-21
 tags:
   - CS
@@ -8,7 +8,7 @@ toc: false
 lang: ko
 abbrlink : operating-system-concepts-introduction
 ---
-
+  
 그 유명한 공룡책을 정독하기에는 너무나 양이 많아, 강의로 학습하고 내용을 기록용으로 정리해봤습니다!
 개인적으로 궁금한 부분을 추가 조사했기 때문에 혹여나 잘못된 정보가 기재되어 있다면 정정 요청 부탁드립니다🙇‍♀️
 

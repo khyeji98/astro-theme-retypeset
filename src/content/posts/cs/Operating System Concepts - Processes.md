@@ -1,5 +1,5 @@
 ---
-title: Operating System Concepts - Processes
+title: Operating System Concepts - 3. Processes
 published: 2025-09-23
 tags:
   - CS
@@ -8,11 +8,11 @@ toc: false
 lang: ko
 abbrlink : operating-system-concepts-processes
 ---
-
-> 이것은 시리즈물입니다🧶
->
-> [2025.09.21 - Operating System Concepts - Introduction](https://kimhyejii.tistory.com/25)  
-> [2025.09.22 - Operating System Concepts - O/S structures](https://kimhyejii.tistory.com/26)
+  
+:::fold[🧶 Operating System Concepts 시리즈]
+[Operating System Concepts - 1. Introduction](https://kimhyeji.dev/posts/operating-system-concepts-introduction/)  
+[Operating System Concepts - 2. O/S](https://kimhyeji.dev/posts/operating-system-concepts-os/)
+:::
 
 ---
 

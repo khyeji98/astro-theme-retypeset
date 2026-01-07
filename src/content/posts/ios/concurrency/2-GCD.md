@@ -4,10 +4,14 @@ published: 2026-01-07
 tags:
   - iOS
   - Concurrency
-toc: true
+toc: false
 lang: ko
 abbrlink : gcd
 ---
+  
+:::fold[🧬 동시성 다이브 시리즈]
+[동시성 다이브 - 1. GCD 이전](https://kimhyeji.dev/posts/before-gcd/)
+:::
 
 ## GCD
 

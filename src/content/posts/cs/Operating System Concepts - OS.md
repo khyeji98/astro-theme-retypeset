@@ -1,5 +1,5 @@
 ---
-title: Operating System Concepts - O/S
+title: Operating System Concepts - 2. O/S
 published: 2025-09-22
 tags:
   - CS
@@ -8,10 +8,10 @@ toc: false
 lang: ko
 abbrlink : operating-system-concepts-os
 ---
-
-> 이것은 시리즈물입니다🧶  
->   
-> [2025.09.21 - Operating System Concepts - Introduction](https://kimhyejii.tistory.com/25)
+  
+:::fold[🧶 Operating System Concepts 시리즈]
+[Operating System Concepts - 1. Introduction](https://kimhyeji.dev/posts/operating-system-concepts-introduction/)
+:::
 
 ---
 
