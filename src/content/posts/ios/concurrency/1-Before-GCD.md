@@ -6,7 +6,7 @@ tags:
   - Concurrency
 toc: true
 lang: ko
-abbrlink : before-gcd
+abbrlink : concurrency-before-gcd
 ---
 
 ## 1️⃣ 동시성(Concurrency)
@@ -117,7 +117,7 @@ GCD 이전(iOS 4가 등장하기 전)까지는 **Thread 기반 모델**을 지�
 
 ---
 
-*Apple은 스레드 관리의 어려움과 비효율을 해결하기 위해, iOS 4부터 **Queue 기반 모델의 GCD**를 도입했습니다.*  
+*Apple은 스레드 관리의 어려움과 비효율을 해결하기 위해, iOS 4부터 **작업 기반 동시성 모델 GCD**를 도입했습니다.*  
 
 > "*Dispatch queues let you focus on the work you actually want to perform without having to worry about thread creation and management.*"  
 > -- ***DispatchQueue는 당신이 스레드 관리에 대해 잊는 대신, 작업을 완수하는 데 집중할 수 있게 해줍니다.***
