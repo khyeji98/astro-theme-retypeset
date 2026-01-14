@@ -40,7 +40,7 @@ export const themeConfig: ThemeConfig = {
       background: 'oklch(96% 0.005 298)',
       // highlight color
       // used for navbar, selected text, etc
-      highlight: 'oklch(0.90 0.12 180 / 0.5)', // cyan/mint highlight
+      highlight: 'oklch(91.30% 0.064 128.0)', // rgb(214, 235, 190)
     },
     dark: {
       // primary color
@@ -50,7 +50,7 @@ export const themeConfig: ThemeConfig = {
       // background color
       background: 'oklch(22% 0.005 298)',
       // highlight color
-      highlight: 'oklch(0.90 0.12 180 / 0.2)', // cyan/mint highlight
+      highlight: 'oklch(46.67% 0.121 138.3)', // rgb(51, 105, 30)
     },
   },
   // COLOR SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END
