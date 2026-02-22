@@ -52,7 +52,7 @@ abbrlink: xcode-concepts
 
 그렇다면 이 키워드들은 서로 어떻게 연결되어 동작할까요? 전체적인 계층과 실행 흐름에 따라 단계별로 따라가 보겠습니다. 🚶‍♂️🚶‍♀️  
   
-![Xcode 개념 계층 구조](../_images/xcode-concept-hierarchy.png)
+![](../_images/xcode-concept-hierarchy.png)
   
 1. 가정 먼저, **Workspace**라는 큰 틀이 여러 **Project**와 **Package**를 품고 있습니다.
 2. 각각의 **Project**와 **Package**는 무엇을 만들지에 대한 빌드 설계도인 **Target**을 하나 이상 가지고 있어요.
